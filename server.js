@@ -8,6 +8,12 @@ const expressLayout=require('express-ejs-layouts')
 
 const PORT=process.env.PORT||3000
 
+
+//Assests check 
+app.use(express.static('public'));
+// app.use(favicon(path.join(__dirname,'public','favicon.ico')));
+
+
 app.get('/',(req,res)=>
 {
     // res.send('Hello from server')
