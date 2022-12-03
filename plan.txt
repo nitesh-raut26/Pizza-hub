@@ -1,0 +1,14 @@
+cart is stored in session database
+express session 
+
+It install because we cannot see a secret file 
+npm install dotenv
+
+express flash is downloaded
+connect-mongo
+we use MongoDbStore as M is capital then it is class or constructor function then we use new keyword 
+now client side code in resources file in js
+data attribute -data-anyname="pizza" any name we select from function name as pizza
+object convert into string then use JSON.stringify(pizza) in home ejs
+axios is added for ajax libraries
+noty library added for displaying cart is successful
