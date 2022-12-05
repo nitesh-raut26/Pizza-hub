@@ -9,6 +9,7 @@ const mongoose=require('mongoose')
 const session=require('express-session')
 const flash=require('express-flash')
 const MongoDbStore=require('connect-mongo')(session)
+const passport=require('passport')
 
 //Database connection
 const url='mongodb://localhost/pizza';
@@ -40,18 +41,24 @@ app.use(session({
   cookie: {maxAge:1000 * 60 * 60 *24}//24 hrs //it is in ms
 }))
 
-
+// passport config
+const passportInit=require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use(flash())
 
 //Assests check 
 app.use(express.static('public'));
 // app.use(favicon(path.join(__dirname,'public','favicon.ico')));
+app.use(express.urlencoded({ extended:false }))
 app.use(express.json())
 
 // global middleware
 app.use((req,res,next)=>{
      res.locals.session=req.session
+     res.locals.user=req.user
      next()
 })
 

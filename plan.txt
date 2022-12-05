@@ -12,3 +12,28 @@ data attribute -data-anyname="pizza" any name we select from function name as pi
 object convert into string then use JSON.stringify(pizza) in home ejs
 axios is added for ajax libraries
 noty library added for displaying cart is successful
+Build register crud
+In expressjs data is received by default expressjs don't know what type of data is like json data,urlencoded data so explicity tell expressjs 
+app.use(express.urlencoded({extended:false})) is used to authenticate
+we use seesion for check error so we have used libaray express-flash flash message is to stored single request
+we couldn't create a password as open to store in database so we have to used hash password 
+so we have to used libraries npm install bcrypt
+passportjs node package manager for login authenticate we used
+
+//error
+Login sessions require session support. Did you forget to use `express-session` middleware?
+and in logout page we got error that req#logout requires a callback function so after trying we found answer then resolved it
+//
+
+if login then do not show login or register page i have to show only logout page
+
+ it found in ejs through we use server.js file in middleware
+ app.use((req,res,next)=>{
+     res.locals.session=req.session
+     next()
+})
+ session.cart ? session.cart.totalQty
+ so if we add user in ejs then we use miidleware is res.locals/user=req.user
+
+
+

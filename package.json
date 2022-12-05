@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.0",
+    "bcrypt": "^5.1.0",
     "connect-mongo": "^3.2.0",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
@@ -24,6 +25,8 @@
     "express-session": "^1.17.3",
     "mongoose": "^6.7.5",
     "noty": "^3.2.0-beta-deprecated",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "webpack": "^5.75.0"
   },
   "devDependencies": {
