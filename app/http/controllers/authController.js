@@ -18,7 +18,7 @@ function authController(){
                 return res.redirect('/login')
             }
            
-            // startegy use local so i wrote local
+            // strategy use local so i wrote local
           passport.authenticate('local',(err,user,info)=>{
             if(err){
                 req.flash('error',info.message)
